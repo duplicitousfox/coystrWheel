@@ -1,0 +1,2 @@
+!!! Font fnt_arial uses a font (Arial Rounded MT Bold) not installed on this system - Font has NOT been regenerated
+GameMaker Studio 1 font texture has been backed up at ${project_dir}\fonts\fnt_arial\fnt_arial.gms1.png

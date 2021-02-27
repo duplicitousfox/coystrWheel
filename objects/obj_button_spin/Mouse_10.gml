@@ -1,0 +1,3 @@
+if (!selected) {
+	selected = true;
+}
