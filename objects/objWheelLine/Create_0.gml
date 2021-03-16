@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 randomize();
+
 //animation
 scrAnimation_Init();
 //movement
@@ -9,6 +10,14 @@ right = false;
 up = false;
 down = false;
 //file stuff
+if !file_exists(working_directory + "wheeldata.txt") {
+	show_message("wheeldata.txt not found. The program will now exit and open the Companion app to auto-generate the file.");
+	game_end();
+	if (os_type == os_windows) {
+		execute_shell(working_directory + "coystrwheelcompanion.exe", false); 
+	}
+	exit;
+}
 var file = file_text_open_read(working_directory + "wheeldata.txt");
 sno = 0; // How many slices are on the wheel.
 slice_array[50,7] = noone; //2D is user name (string), weight, slice RGB, text RGB (real)
@@ -30,13 +39,16 @@ is_spinning = false; //If the wheel's spinning, this is turned on.
 rotate_spd = 0; //Makes the wheel go wheeeeeee
 wheel_weight_total = 0;
 rigged = 0;
+chosen_one = "";
+rigged_one = "";
+rigged_center = 0;
 
 for (i = 0; i < sno; i += 1;) {
 	if (slice_array[i, 7] = noone) {
 		break; 
 	}
 	wheel_weight_total += slice_array[i, 1]; // The sum of the wheel slice weights
-	if (slice_array[rigged, 1] >= slice_array[i, 1]) {
+	if (slice_array[rigged, 1] >= slice_array[i, 1]) { // determine which slice is rigged
 		rigged = rigged;
 	} else {
 		rigged = i;
@@ -68,5 +80,7 @@ for (i = 0; i < sno; i += 1) { // Bugfix: if the angle fell precisely on a borde
 
 }
 
-min_value = 45; //Minimum value to add in wheel rotation.
-max_value = 100; //Maximum value to add in wheel rotation.
+min_value = 50; //Minimum value to add in wheel rotation.
+max_value = 200; //Maximum value to add in wheel rotation.
+
+rigged_center = ((slice_angle[rigged, 0] + slice_angle[rigged, 1])/2)

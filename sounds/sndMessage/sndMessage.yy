@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 0.56,
+  "volume": 1.0,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "sndMessage.wav",
-  "duration": 0.161009,
+  "soundFile": "sndMessage.ogg",
+  "duration": 0.123526,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

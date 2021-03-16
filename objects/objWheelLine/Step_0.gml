@@ -3,6 +3,7 @@
 //buttons
 
 angle += rotate_spd;
+rigged_one = slice_array[rigged, 0]
 
 if is_spinning == 1 {
 	if rotate_spd > negative_force {

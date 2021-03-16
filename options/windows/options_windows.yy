@@ -1,7 +1,7 @@
 {
   "option_windows_display_name": "coystrWheel",
   "option_windows_executable_name": "${project_name}.exe",
-  "option_windows_version": "1.0.0.0",
+  "option_windows_version": "1.0.3.0",
   "option_windows_company_info": "Foxtail Studios",
   "option_windows_product_info": "coystrWheel",
   "option_windows_copyright_info": "2020, 2021 Foxtail Studios",

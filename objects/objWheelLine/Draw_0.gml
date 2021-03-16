@@ -1,5 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
+if !file_exists(working_directory + "wheeldata.txt") {
+	exit;
+}
+
 var i,
 	r,
 	s_col,
@@ -51,11 +55,12 @@ for(i = 0; i < sno; i += 1) {
 		break;
 	}
 	if (360 - angle >= (slice_angle[i, 0]) && 360 - angle <= (slice_angle[i, 1])) && is_spinning = 0 && was_spun != 0 {
+		chosen_one = slice_array[i, 0]
 		draw_set_font(fntCourier32);
-		draw_set_halign(fa_middle);
-        draw_text_color(room_width/2, 825, "!badseed"+slice_array[i, 0],c_white,c_white,c_white,c_white,1);
+		draw_set_halign(fa_right);
+        draw_text_color(1550, 750, "!badseed"+chosen_one,c_white,c_white,c_white,c_white,1);
     }
 }
 draw_set_halign(fa_middle);
 draw_set_font(fntCourier16);
-draw_text_color(1335, 175, "!rigged Seed:"+slice_array[rigged, 0],c_white,c_white,c_white,c_white,1);
+draw_text_color(1398, 175, "!rigged:"+slice_array[rigged, 0],c_white,c_white,c_white,c_white,1);
